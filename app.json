@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "MediFill",
+    "slug": "medifill",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "medifill",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.medifill.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "MediFill needs camera access to scan medicine labels and prescriptions.",
+        "NSLocationWhenInUseUsageDescription": "MediFill needs your location to find nearby pharmacies."
+      }
+    },
+    "android": {
+      "package": "com.medifill.app",
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#4F46E5"
+      },
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "MediFill needs camera access to scan medicine labels."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "MediFill needs your location to find nearby pharmacies."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "MediFill needs photo access to scan medicine labels.",
+          "cameraPermission": "MediFill needs camera access to scan medicine labels."
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
